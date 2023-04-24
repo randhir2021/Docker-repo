@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'This is the build Stage'
-                docker build . -t sample-app
+                docker build -t sample-app .
             }
         }
         stage('Test'){
