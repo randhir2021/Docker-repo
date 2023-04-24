@@ -7,7 +7,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'This is the build Stage'
-                docker build -t sample-app .
+                sh 'docker build -t sample-app .'
             }
         }
         stage('Test'){
@@ -18,7 +18,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'This is the deploy stage'
-                docker run sample-app -p 8000:8000
+                sh 'docker run sample-app -p 8000:8000'
             }
         }
     }
